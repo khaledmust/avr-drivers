@@ -135,12 +135,6 @@
 #define GIFR *((uint8 *)0x5A)
 
 
-#define TCCR0 *((volatile uint8 *)0x53)
-#define TCNT0 *((volatile uint8 *)0x52)
-#define TIMSK *((volatile uint8 *)0x59)
-#define OCR0 *((volatile uint8 *)0x5C)
-#define TIFR *((volatile uint8 *)0x58)
-
 typedef enum {
     CS00 = 0, CS01, CS02, WGM01, COM00, COM01, WGM00, FOC0
 }TCCR0_BITS;

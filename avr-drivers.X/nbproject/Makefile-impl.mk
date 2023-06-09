@@ -27,11 +27,11 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 PROJECTNAME=avr-drivers.X
 
 # Active Configuration
-DEFAULTCONF=default
+DEFAULTCONF=USBASP
 CONF=${DEFAULTCONF}
 
 # All Configurations
-ALLCONFS=default 
+ALLCONFS=default USBASP 
 
 
 # build
@@ -46,12 +46,14 @@ ALLCONFS=default
 # clobber
 .clobber-impl: .clobber-pre .depcheck-impl
 	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=default clean
+	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=USBASP clean
 
 
 
 # all
 .all-impl: .all-pre .depcheck-impl
 	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=default build
+	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=USBASP build
 
 
 
