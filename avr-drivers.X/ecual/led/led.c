@@ -12,21 +12,25 @@
  * @return LED_STATUS_SUCCESS
  * @return LED_STATUS_FAILED
  */
-en_LED_State LED_init(uint8 led_name) {
-    switch (led_name) {
-        case blue:
-            GPIO_setPinDirection(BLUE_LED_PORT_ID, BLUE_LED_PIN_ID, GPIO_PIN_OUTPUT);
-            break;
-        case green:
-            GPIO_setPinDirection(GREEN_LED_PORT_ID, GREEN_LED_PIN_ID, GPIO_PIN_OUTPUT);
-            break;
-        case red:
-            GPIO_setPinDirection(RED_LED_PORT_ID, RED_LED_PIN_ID, GPIO_PIN_OUTPUT);
-            break;
-        default:
-            return LED_STATUS_FAILED;
-    }
-    return LED_STATUS_SUCCESS;
+//en_LED_State LED_init(uint8 led_name) {
+//    switch (led_name) {
+//        case blue:
+//            GPIO_setPinDirection(BLUE_LED_PORT_ID, BLUE_LED_PIN_ID, GPIO_PIN_OUTPUT);
+//            break;
+//        case green:
+//            GPIO_setPinDirection(GREEN_LED_PORT_ID, GREEN_LED_PIN_ID, GPIO_PIN_OUTPUT);
+//            break;
+//        case red:
+//            GPIO_setPinDirection(RED_LED_PORT_ID, RED_LED_PIN_ID, GPIO_PIN_OUTPUT);
+//            break;
+//        default:
+//            return LED_STATUS_FAILED;
+//    }
+//    return LED_STATUS_SUCCESS;
+//}
+
+en_LED_State LED_init(st_LED_config_t *ptr_st_LED_config) {
+    GPIO_setPinDirection(ptr_st_LED_config->led_port, ptr_st_LED_config->led_pin, GPIO_PIN_OUTPUT);
 }
 
 /**
@@ -40,20 +44,25 @@ en_LED_State LED_init(uint8 led_name) {
  * @return LED_STATUS_SUCCESS
  * @return LED_STATUS_FAILED
  */
-en_LED_State LED_on(uint8 led_name) {
-    switch (led_name) {
-        case blue:
-            GPIO_writePin(BLUE_LED_PORT_ID, BLUE_LED_PIN_ID, GPIO_PIN_HIGH);
-            break;
-        case green:
-            GPIO_writePin(GREEN_LED_PORT_ID, GREEN_LED_PIN_ID, GPIO_PIN_HIGH);
-            break;
-        case red:
-            GPIO_writePin(RED_LED_PORT_ID, RED_LED_PIN_ID, GPIO_PIN_HIGH);
-            break;
-        default:
-            return LED_STATUS_FAILED;
-    }
+//en_LED_State LED_on(uint8 led_name) {
+//    switch (led_name) {
+//        case blue:
+//            GPIO_writePin(BLUE_LED_PORT_ID, BLUE_LED_PIN_ID, GPIO_PIN_HIGH);
+//            break;
+//        case green:
+//            GPIO_writePin(GREEN_LED_PORT_ID, GREEN_LED_PIN_ID, GPIO_PIN_HIGH);
+//            break;
+//        case red:
+//            GPIO_writePin(RED_LED_PORT_ID, RED_LED_PIN_ID, GPIO_PIN_HIGH);
+//            break;
+//        default:
+//            return LED_STATUS_FAILED;
+//    }
+//    return LED_STATUS_SUCCESS;
+//}
+
+en_LED_State LED_on(st_LED_config_t *ptr_st_LED_config) {
+    GPIO_writePin(ptr_st_LED_config->led_port, ptr_st_LED_config->led_pin, GPIO_PIN_HIGH);
     return LED_STATUS_SUCCESS;
 }
 
@@ -68,20 +77,25 @@ en_LED_State LED_on(uint8 led_name) {
  * @return LED_STATUS_SUCCESS
  * @return LED_STATUS_FAILED
  */
-en_LED_State LED_off(uint8 led_name) {
-    switch (led_name) {
-        case blue:
-            GPIO_writePin(BLUE_LED_PORT_ID, BLUE_LED_PIN_ID, GPIO_PIN_LOW);
-            break;
-        case green:
-            GPIO_writePin(GREEN_LED_PORT_ID, GREEN_LED_PIN_ID, GPIO_PIN_LOW);
-            break;
-        case red:
-            GPIO_writePin(RED_LED_PORT_ID, RED_LED_PIN_ID, GPIO_PIN_LOW);
-            break;
-        default:
-            return LED_STATUS_FAILED;
-    }
+//en_LED_State LED_off(uint8 led_name) {
+//    switch (led_name) {
+//        case blue:
+//            GPIO_writePin(BLUE_LED_PORT_ID, BLUE_LED_PIN_ID, GPIO_PIN_LOW);
+//            break;
+//        case green:
+//            GPIO_writePin(GREEN_LED_PORT_ID, GREEN_LED_PIN_ID, GPIO_PIN_LOW);
+//            break;
+//        case red:
+//            GPIO_writePin(RED_LED_PORT_ID, RED_LED_PIN_ID, GPIO_PIN_LOW);
+//            break;
+//        default:
+//            return LED_STATUS_FAILED;
+//    }
+//    return LED_STATUS_SUCCESS;
+//}
+
+en_LED_State LED_off(st_LED_config_t *ptr_st_LED_config) {
+    GPIO_writePin(ptr_st_LED_config->led_port, ptr_st_LED_config->led_pin, GPIO_PIN_LOW);
     return LED_STATUS_SUCCESS;
 }
 

@@ -32,6 +32,11 @@ typedef enum {
     LED_STATUS_SUCCESS, LED_STATUS_FAILED
 }en_LED_State;
 
+typedef struct {
+    uint8 led_port;
+    uint8 led_pin;
+}st_LED_config_t;
+
 /**
  * @brief Initializes the direction of the LED pins as output pins.
  * @param[in] led_name Specifies the LED to be initialized.
@@ -42,7 +47,7 @@ typedef enum {
  * @return LED_STATUS_SUCCESS
  * @return LED_STATUS_FAILED
  */
-en_LED_State LED_init(en_LED_Names led_name);
+en_LED_State LED_init(st_LED_config_t *ptr_st_LED_config);
 
 /**
  * @brief Turns on the specified LED.
@@ -54,7 +59,7 @@ en_LED_State LED_init(en_LED_Names led_name);
  * @return LED_STATUS_SUCCESS
  * @return LED_STATUS_FAILED
  */
-en_LED_State LED_on(en_LED_Names led_name);
+en_LED_State LED_on(st_LED_config_t *ptr_st_LED_config);
 
 /**
  * @brief Turns off the specified LED.
@@ -66,7 +71,7 @@ en_LED_State LED_on(en_LED_Names led_name);
  * @return LED_STATUS_SUCCESS
  * @return LED_STATUS_FAILED
  */
-en_LED_State LED_off(en_LED_Names led_name);
+en_LED_State LED_off(st_LED_config_t *ptr_st_LED_config);
 
 /**
  *

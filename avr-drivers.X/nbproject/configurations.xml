@@ -18,6 +18,9 @@
       <itemPath>utilities/registers.h</itemPath>
       <itemPath>utilities/std_types.h</itemPath>
       <itemPath>mcal/timer/timer_private.h</itemPath>
+      <itemPath>services/timer_services.h</itemPath>
+      <itemPath>application/application.h</itemPath>
+      <itemPath>mcal/interrupt/exi.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -35,6 +38,9 @@
       <itemPath>mcal/timer/timer.c</itemPath>
       <itemPath>mcal/spi/spi.c</itemPath>
       <itemPath>mcal/gpio/gpio.c</itemPath>
+      <itemPath>services/timer_services.c</itemPath>
+      <itemPath>application/application.c</itemPath>
+      <itemPath>mcal/interrupt/exi.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -51,6 +57,8 @@
     <Elem>mcal/spi</Elem>
     <Elem>mcal/timer</Elem>
     <Elem>utilities</Elem>
+    <Elem>services</Elem>
+    <Elem>application</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -208,8 +216,8 @@
         <property key="oscillator.auxfrequencyunit" value="Mega"/>
         <property key="oscillator.frequency" value="1"/>
         <property key="oscillator.frequencyunit" value="Mega"/>
-        <property key="oscillator.rcfrequency" value="250"/>
-        <property key="oscillator.rcfrequencyunit" value="Kilo"/>
+        <property key="oscillator.rcfrequency" value="16"/>
+        <property key="oscillator.rcfrequencyunit" value="Mega"/>
         <property key="periphADC1.altscl" value="false"/>
         <property key="periphADC1.minTacq" value=""/>
         <property key="periphADC1.tacqunits" value="microseconds"/>
@@ -682,8 +690,8 @@
         <property key="oscillator.auxfrequencyunit" value="Mega"/>
         <property key="oscillator.frequency" value="1"/>
         <property key="oscillator.frequencyunit" value="Mega"/>
-        <property key="oscillator.rcfrequency" value="250"/>
-        <property key="oscillator.rcfrequencyunit" value="Kilo"/>
+        <property key="oscillator.rcfrequency" value="16"/>
+        <property key="oscillator.rcfrequencyunit" value="Mega"/>
         <property key="periphADC1.altscl" value="false"/>
         <property key="periphADC1.minTacq" value=""/>
         <property key="periphADC1.tacqunits" value="microseconds"/>

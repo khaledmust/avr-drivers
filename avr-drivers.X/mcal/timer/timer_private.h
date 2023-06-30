@@ -1,6 +1,6 @@
 /* 
  * File:   timer_private.h
- * Author: khaled
+ * Author:  KHALED MUSTAFA
  *
  * Created on June 8, 2023, 9:16 AM
  */
@@ -15,7 +15,6 @@
 #define OCR0 *((volatile uint8 *)0x5C) ///< Output Compare Register
 #define TIFR *((volatile uint8 *)0x58) ///< Timer/Counter Interrutp Flag Register
 
-
 #define CS00    0 ///< Clock select.
 #define CS01    1 ///< Clock select.
 #define CS02    2 ///< Clock select.
@@ -24,6 +23,8 @@
 #define COM01   5 ///< Compare match output mode.
 #define WGM00   6 ///< Waveform generation mode.
 #define FOC0    7 ///< Force output compare.
+
+
 
 #define TOIE0   0 ///< Timer/Counter0 overflow interrupt enable.
 #define OCIE0   1 ///< Timer/Counter0 output compare match interrupt enable.
@@ -44,6 +45,4 @@
 #define TOV2    6
 #define OCF2    7
 
-
 #endif	/* TIMER_PRIVATE_H */
-

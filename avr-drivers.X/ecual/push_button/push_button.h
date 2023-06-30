@@ -1,6 +1,7 @@
 #ifndef PUSH_BUTTON_H_
 #define PUSH_BUTTON_H_
 #include "../../utilities/registers.h"
+#include "../../mcal/interrupt/exi.h"
 
 /**
  * @defgroup PB_PORT_PIN_CONFIGURATION
